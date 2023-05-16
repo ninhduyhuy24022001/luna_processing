@@ -1,0 +1,20 @@
+- 10/5: lấy code hàm mask annotations.
+
+
+Task:
++ Tính phần % mask trên tổng => tỷ lệ grouptrue => unbalance data.
+
+
+### note
+folder subset{0}-gt: 2 file npy cho mỗi bệnh nhân
+    + *_gt.npy: chứa mask của ảnh
+    + *_posindex.npy: chứa index có chứa khối u ([0] trong trường hợp ko chứa khối u)
+
+    => all pixel = 10570017921
+    => annos pixel = 3421923
+
+folder center-coord-chunk-v2/subset{0}-gt: chứa nhiều file 
+    + *_?_gt.npy: file mask của annotions với shape (16, 50, 50)
+
+    => percentage = [768914/(768914 + 74121216)]*100 = 1.0267%
+
