@@ -18,3 +18,10 @@ folder center-coord-chunk-v2/subset{0}-gt: chứa nhiều file
 
     => percentage = [768914/(768914 + 74121216)]*100 = 1.0267%
 
+
+### reference
+link: https://github.dev/deep-learning-with-pytorch/dlwpt-code
+
+
+######
+center-coord-chunk: background = 170
