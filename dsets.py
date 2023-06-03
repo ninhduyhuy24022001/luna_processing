@@ -105,7 +105,7 @@ class Ct:
         self.origin_xyz = XyzTuple(*ct_mhd.GetOrigin())
         self.vxSize_xyz = XyzTuple(*ct_mhd.GetSpacing())
         self.direction_a = np.array(ct_mhd.GetDirection()).reshape(3, 3)
-
+    
     def getRawCandidate(self, center_xyz, width_irc):
         center_irc = xyz2irc(
             center_xyz,
