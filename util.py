@@ -4,6 +4,7 @@ import collections
 from matplotlib.patches import Rectangle
 from PIL import Image
 import glob
+import SimpleITK as sitk
 
 config_paths = {
     "luna16":"../../luna16/LUNA16/",
@@ -93,3 +94,13 @@ def get_uids(subsets = list(range(10))):
             result.append(f.split("\\")[-1][:-4])
 
     return result
+
+def read_sitk(path):
+    ct_mhd = sitk.ReadImage(path)
+    ct_a = np.array(sitk.GetArrayFromImage(ct_mhd), dtype=np.float32)
+
+    origin = np.array(ct_mhd.GetOrigin())[::-1]
+    spacing= np.array(ct_mhd.GetSpacing())[::-1]
+    direction = np.array(ct_mhd.GetDirection())[::-1]
+
+    return ct_a, origin, spacing, direction
